@@ -1,0 +1,138 @@
+/* Dispositivos grandes (desktops, 1200px+) */
+@media (min-width: 1200px) {
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Dispositivos médios (tablets, 768px - 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Dispositivos pequenos (phones, até 767px) */
+@media (max-width: 767px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        position: relative;
+    }
+    
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+    }
+    
+    .logo {
+        margin: 1rem 0;
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav li {
+        margin: 0.5rem 0;
+    }
+    
+    /* Hero Section */
+    .hero {
+        height: auto;
+        padding: 6rem 1rem;
+        margin-top: 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    /* Games Section */
+    .games {
+        padding: 2rem 0;
+    }
+    
+    .game-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    /* Trailer Section */
+    .trailer {
+        padding: 2rem 0;
+    }
+    
+    /* Community Section */
+    .community {
+        padding: 2rem 0;
+    }
+    
+    .testimonials {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    /* Contact Section */
+    .contact {
+        padding: 2rem 0;
+    }
+    
+    /* Textos */
+    h2 {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+}
+
+/* Ajustes para telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
+    
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Orientação paisagem em dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 4rem 1rem;
+    }
+}
+
+/* Tablets em modo retrato */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}

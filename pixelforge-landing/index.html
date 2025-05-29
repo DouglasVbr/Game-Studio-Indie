@@ -1,67 +1,113 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>PixelForge Studios | Game Studio Indie</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
+    <!-- Header -->
     <header>
-
-        <img src="./assets/img/logo.jpeg" alt="Logo da Pixelforge Studios" class="logo">
-         
-        <h1>Pixelforge Studios</h1>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        <div class="logo">
+            <img src="assets/img/logo-removebg-preview.png" alt="PixelForge Studios">
+        </div>
         <nav>
             <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#Trailler">Traillers</a></li>
-                <li><a href="#jogos">jogos</a></li>
-                <li><a href="#comunidade">comunidade</a></li>
-                <li><a href="#contato">Contato</a></li>
-
+                <li><a href="#home">Home</a></li>
+                <li><a href="#games">Jogos</a></li>
+                <li><a href="#trailer">Trailer</a></li>
+                <li><a href="#community">Comunidade</a></li>
+                <li><a href="#contact">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Bem-vindo ao Pixelforge, onde transformamos ideias em pixels.</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>CRIANDO EXPERIÊNCIAS QUE INSPIRAM</h1>
+            <p>Desenvolvendo jogos indie com paixão desde 2023</p>
+            <button class="cta-button">Conheça nossos jogos</button>
+        </div>
     </section>
 
-    <section id="Trailler">
-        <h2>Recursos</h2>
-        <ul>
-            <li>Design Personalizado</li>
-            <li>Desenvolvimento Web</li>
-            <li>Suporte 24/7</li>
-        </ul>
+    <!-- Games Section -->
+    <section id="games" class="games">
+        <h2>NOSSOS JOGOS</h2>
+        <div class="game-grid">
+            <div class="game-card">
+                <img src="assets/img/game1.jpg" alt="Cyber Realm">
+                <div class="game-info">
+                    <h3>Cyber Realm</h3>
+                    <p>RPG • Ação • 2024</p>
+                    <span class="game-price">R$ 59,90</span>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="assets/img/game2.jpg" alt="Pixel Quest">
+                <div class="game-info">
+                    <h3>Pixel Quest</h3>
+                    <p>Plataforma • Aventura • 2023</p>
+                    <span class="game-price">R$ 39,90</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="jogos">
-        <h2>Contato</h2>
-        <p>Email:
-
+    <!-- Trailer Section -->
+    <section id="trailer" class="trailer">
+        <h2>TRAILER EM DESTAQUE</h2>
+        <div class="video-container">
+            <video controls poster="assets/img/game1.jpg">
+                <source src="assets/trailer.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        </div>
     </section>
 
-
-    <section id="comunidade">
-        <h2>Comunidade</h2>
-        <p>Junte-se à nossa comunidade no Discord!</p>
-
+    <!-- Community Section -->
+    <section id="community" class="community">
+        <h2>COMUNIDADE</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Player">
+                <p>"Cyber Realm mudou minha visão sobre jogos indie. Gráficos incríveis!"</p>
+                <span>- Maria S.</span>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Player">
+                <p>"A equipe tem uma visão única. Mal posso esperar pelo próximo lançamento!"</p>
+                <span>- João P.</span>
+            </div>
+        </div>
     </section>
-    
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Para mais informações, entre em contato conosco pelo email:
 
-        </p> 
-   </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>FALE CONOSCO</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <textarea placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Pixelforge Studios. Todos os direitos reservados.</p>
-    </footer>        
-           
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>© 2023 PixelForge Studios. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
