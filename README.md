@@ -54,5 +54,5 @@ cd pixelforge-landing
 
 ### 👨‍💻 Desenvolvedor
 
-Nome do Aluno: [Seu Nome Aqui]  
-Contato: [Seu E-mail Aqui]
+Nome do Alunos: Douglas Vieira, Davi da Silveira
+Contato: 51998509992
