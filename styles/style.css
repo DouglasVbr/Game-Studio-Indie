@@ -1,0 +1,470 @@
+/* Global Styles */
+:root {
+    --primary: #3D348B;
+    --secondary: #00F5FF;
+    --dark: #0A0A0A;
+    --light: #FFFFFF;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+h1, h2, h3 {
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--primary);
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+}
+
+.logo img {
+    max-width: 180px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Luz neon atrás da logo */
+.logo::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    height: 180px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient(circle, #00fff7 0%, #00fff700 50%);
+    box-shadow:
+        0 0 40px 20px #00fff7,
+        0 0 80px 40px #00fff755,
+        0 0 120px 60px #00fff722;
+    opacity: 0.7;
+    animation: neon-back-glow 1.2s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes neon-back-glow {
+    0% {
+        opacity: 0.5;
+        box-shadow:
+            0 0 30px 10px #00fff7,
+            0 0 60px 30px #00fff755,
+            0 0 90px 45px #00fff722;
+    }
+    100% {
+        opacity: 0.9;
+        box-shadow:
+            0 0 60px 30px #00fff7,
+            0 0 120px 60px #00fff755,
+            0 0 180px 90px #00fff722;
+    }
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 2rem;
+}
+
+nav a {
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/img/bg.jpg');
+    background-size: cover;
+}
+
+/* Games Section */
+.games {
+    padding: 5rem;
+    text-align: center;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    align-items: start;
+    margin-top: 3rem;
+}
+
+.game-card {
+    width: 340px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-sizing: border-box;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+}
+
+.game-card img {
+    width: 320px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 16px auto 0 auto;
+}
+
+/* Grid para vídeos dos trailers */
+.trailer-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+/* Vídeos dos trailers */
+.video-container {
+    width: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container video {
+    width: 320px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Remove flex da .trailer */
+.trailer {
+    text-align: center;
+    padding: 5rem 0 2rem 0;
+}
+
+/* Suggestion Button and Popup Styles */
+.suggestion-btn {
+    margin: 24px auto 0 auto;
+    display: block;
+    padding: 10px 24px;
+    background: var(--secondary);
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 0 8px #00f5ff55;
+}
+.suggestion-btn:hover {
+    background: #00c3cc;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.popup-overlay.active {
+    display: flex;
+}
+.popup-content {
+    background: #222;
+    padding: 32px 24px;
+    border-radius: 12px;
+    min-width: 320px;
+    max-width: 90vw;
+    position: relative;
+    box-shadow: 0 4px 24px #0008;
+    text-align: center;
+}
+.close-popup {
+    position: absolute;
+    top: 12px; right: 16px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+.typing-bubble {
+    background: #444;
+    color: #fff;
+    border-radius: 16px;
+    padding: 8px 18px;
+    margin-bottom: 16px;
+    display: inline-block;
+    font-size: 1rem;
+    animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+#suggestion-form textarea {
+    width: 90%;
+    min-height: 60px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    margin-bottom: 12px;
+    padding: 8px;
+    resize: none;
+    font-size: 1rem;
+}
+#suggestion-form button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--secondary);
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+}
+#suggestion-list {
+    margin-top: 18px;
+    text-align: left;
+    max-height: 120px;
+    overflow-y: auto;
+}
+#suggestion-list .suggestion-item {
+    background: #333;
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+/* Comunidade - container com padding */
+.community {
+    padding: 4rem 0 4rem 0;
+    background: #181828;
+}
+
+/* Cards de depoimento organizados em grid responsivo */
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+}
+
+/* Card de depoimento */
+.testimonial-card {
+    background: #23234a;
+    border-radius: 16px;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    box-shadow: 0 0 24px #00f5ff33;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 260px;
+    max-width: 320px;
+    position: relative;
+}
+
+/* Imagem redonda com borda neon */
+.testimonial-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    margin-left: 1rem; /* afasta da borda esquerda */
+    border: 4px solid #00f5ff;
+    box-shadow: 0 0 16px #00f5ff, 0 0 32px #3D348B55;
+    background: #111;
+    transition: box-shadow 0.3s;
+}
+.testimonial-card img:hover {
+    box-shadow: 0 0 32px #00f5ff, 0 0 64px #3D348B;
+}
+
+/* Texto do depoimento */
+.testimonial-card p {
+    color: #fff;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Nome */
+.testimonial-card span {
+    color: #00f5ff;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+/* Botões centralizados e alinhados */
+.suggestion-btn {
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--secondary);
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 0 8px #00f5ff55;
+}
+.suggestion-btn:hover {
+    background: #00c3cc;
+}
+
+/* Container dos botões centralizado */
+.testimonials > .suggestion-btn,
+.testimonials > #clear-suggestions {
+    display: inline-block;
+    margin: 1rem 0.5rem 0 0.5rem;
+}
+.testimonials {
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary);
+}
+
+/* Estilo para o formulário de contato */
+.contact {
+    background: #23234a;
+    padding: 4rem 0 3rem 0;
+    text-align: center;
+}
+
+#contact-form {
+    max-width: 420px;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 2rem auto 0 auto;
+    background: #181828;
+    padding: 2rem 2rem 1.5rem 2rem;
+    border-radius: 18px;
+    box-shadow: 0 0 32px #00f5ff22;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #23234a;
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 8px #00f5ff22;
+    transition: box-shadow 0.3s, background 0.3s;
+    outline: none;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    background: #23234a;
+    box-shadow: 0 0 16px #00f5ff, 0 0 32px #3D348B55;
+}
+
+#contact-form textarea {
+    min-height: 120px;
+    max-height: 120px;
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contact-form button {
+    background: var(--secondary);
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 12px #00f5ff55;
+    transition: background 0.3s;
+}
+
+#contact-form button:hover {
+    background: #00c3cc;
+    color: #fff;
+}
+
+/* Estilo para o formulário de contato - ajustes sugeridos */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.contact form input,
+.contact form textarea,
+.contact form button {
+    width: 80%; /* Ou ajuste conforme necessário */
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+}
+@media (max-width: 500px) {
+    #contact-form {
+        padding: 1rem 0.5rem 1rem 0.5rem;
+    }
+}

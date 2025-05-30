@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelForge Studios | Game Studio Indie</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+    <header>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        <div class="logo">
+            <img src="assets/img/logo-removebg-preview.png" alt="PixelForge Studios">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#games">Jogos</a></li>
+                <li><a href="#trailer">Trailer</a></li>
+                <li><a href="#community">Comunidade</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>CRIANDO EXPERIÊNCIAS QUE INSPIRAM</h1>
+            <p>Desenvolvendo jogos indie com paixão desde 2025</p>
+            <button class="cta-button">Conheça nossos jogos</button>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <div class="game-grid">
+        <div class="game-card">
+            <img src="assets/img/jogo1.jpg" alt="Fortnite">
+            <div class="game-info">
+                <h3>Fortnite</h3>
+                <p>Battle Royale • 2017</p>
+                <span class="game-price">R$ Gratís</span>
+            </div>
+        </div>
+        <div class="game-card">
+            <img src="assets/img/gta6.jpg" alt="GTA 6">
+            <div class="game-info">
+                <h3>GTA 6</h3>
+                <p>Ação • Aventura • 2026</p>
+                <span class="game-price">R$ 500,00</span>
+            </div>
+        </div>
+        <div class="game-card">
+            <img src="assets/img/infamous.jpg" alt="Infamous 2">
+            <div class="game-info">
+                <h3>Infamous 2</h3>
+                <p>Ação• Aventura • 2011</p>
+                <span class="game-price">R$ 69,90</span>
+            </div>
+        </div>
+        <div class="game-card">
+            <img src="assets/img/lol.jpeg" alt="lol">
+            <div class="game-info">
+                <h3>League of Legends</h3>
+                <p>Moba • Multijogador • 2009</p>
+                <span class="game-price">R$ Gratís</span>
+            </div>
+        </div>
+        <div class="game-card">
+            <img src="assets/img/pokemonarceus.jpg" alt="arceus">
+            <div class="game-info">
+                <h3>Pokemon Arceus</h3>
+                <p>RPG • Ação • 2022</p>
+                <span class="game-price">R$ Gratís</span>
+            </div>
+        </div>
+        <div class="game-card">
+            <img src="assets/img/readdead2.jpg" alt="lol">
+            <div class="game-info">
+                <h3>Read Dead II</h3>
+                <p>Ação • Aventura • 2018</p>
+                <span class="game-price">R$ 200,00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trailer Section -->
+    <section id="trailer" class="trailer">
+        <h2>TRAILER EM DESTAQUE</h2>
+        <div class="trailer-videos">
+            <div class="video-container">
+                <video controls poster="assets/img/gta6.jpg">
+                    <source src="assets/img/video/gtaTrailler.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+            <div class="video-container">
+                <video controls poster="assets/img/infamous.jpg">
+                    <source src="assets/img/video/traillerInfamous2.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+            <div class="video-container">
+                <video controls poster="assets/img/lol.jpeg">
+                    <source src="assets/img/video/traillerLol.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+            <div class="video-container">
+                <video controls poster="assets/img/jogo1.jpg">
+                    <source src="assets/img/video/traillerFortnite.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="community" class="community">
+        <h2>COMUNIDADE</h2>
+        <div class="testimonials" id="testimonials">
+            <div class="testimonial-card">
+                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Player">
+                <p>"Cyber Realm mudou minha visão sobre jogos indie. Gráficos incríveis!"</p>
+                <span>- Maria S.</span>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Player">
+                <p>"A equipe tem uma visão única. Mal posso esperar pelo próximo lançamento!"</p>
+                <span>- João P.</span>
+            </div>
+       
+            <button id="open-popup" class="suggestion-btn">Enviar sugestão</button>
+            <button id="clear-suggestions" class="suggestion-btn" style="background:#ff5252;color:#fff;margin-left:10px;">Limpar sugestões</button>
+        </div>
+
+      
+        <div id="suggestion-popup" class="popup-overlay">
+            <div class="popup-content">
+                <span class="close-popup" id="close-popup">&times;</span>
+                <div class="typing-bubble" id="typing-bubble">Digitando...</div>
+                <form id="suggestion-form">
+                    <textarea id="suggestion-text" placeholder="Digite sua sugestão..." required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+                <div id="suggestion-list"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <h2>FALE CONOSCO</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <textarea placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+   
+    <footer>
+        <div class="social-links">
+            <a href="https://twitter.com/PixelForgeStudios" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="https://discord.gg/pixelforge" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>© 2023 PixelForge Studios. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
