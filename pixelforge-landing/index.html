@@ -37,43 +37,77 @@
     </section>
 
     <!-- Games Section -->
-    <section id="games" class="games">
-        <h2>NOSSOS JOGOS</h2>
-        <div class="game-grid">
-            <div class="game-card">
-                <img src="assets/img/game1.jpg" alt="Cyber Realm">
-                <div class="game-info">
-                    <h3>Cyber Realm</h3>
-                    <p>RPG • Ação • 2024</p>
-                    <span class="game-price">R$ 59,90</span>
-                </div>
-            </div>
-            <div class="game-card">
-                <img src="assets/img/game2.jpg" alt="Pixel Quest">
-                <div class="game-info">
-                    <h3>Pixel Quest</h3>
-                    <p>Plataforma • Aventura • 2023</p>
-                    <span class="game-price">R$ 39,90</span>
-                </div>
-            </div>
+    <div class="game-grid">
+    <div class="game-card">
+        <img src="assets/img/jogo1.jpg" alt="Fortnite">
+        <div class="game-info">
+            <h3>Fortnite</h3>
+            <p>Battle Royale • 2017</p>
+            <span class="game-price">R$ Gratís</span>
         </div>
-    </section>
+    </div>
+    <div class="game-card">
+        <img src="assets/img/gta6.jpg" alt="GTA 6">
+        <div class="game-info">
+            <h3>GTA 6</h3>
+            <p>Ação • Aventura • 2026</p>
+            <span class="game-price">R$ 500,00</span>
+        </div>
+    </div>
+    <div class="game-card">
+        <img src="assets/img/infamous.jpg" alt="Infamous 2">
+        <div class="game-info">
+            <h3>Infamous 2</h3>
+            <p>Ação• Aventura • 2011</p>
+            <span class="game-price">R$ 69,90</span>
+        </div>
+    </div>
+    <!-- Remova o fechamento de div extra aqui -->
+    <div class="game-card">
+        <img src="assets/img/lol.jpeg" alt="lol">
+        <div class="game-info">
+            <h3>League of Legends</h3>
+            <p>Moba • Multijogador • 2009</p>
+            <span class="game-price">R$ Gratís</span>
+        </div>
+    </div>
+</div>
 
     <!-- Trailer Section -->
     <section id="trailer" class="trailer">
-        <h2>TRAILER EM DESTAQUE</h2>
+    <h2>TRAILER EM DESTAQUE</h2>
+    <div class="trailer-videos">
         <div class="video-container">
-            <video controls poster="assets/img/game1.jpg">
-                <source src="assets/trailer.mp4" type="video/mp4">
+            <video controls poster="assets/img/gta6.jpg">
+                <source src="assets/img/video/gtaTrailler.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos.
             </video>
         </div>
-    </section>
+        <div class="video-container">
+            <video controls poster="assets/img/infamous.jpg">
+                <source src="assets/img/video/traillerInfamous2.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        </div>
+        <div class="video-container">
+            <video controls poster="assets/img/lol.jpeg">
+                <source src="assets/img/video/traillerLol.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        </div>
+        <div class="video-container">
+            <video controls poster="assets/img/jogo1.jpg">
+                <source src="assets/img/video/traillerFortnite.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        </div>
+    </div>
+</section>
 
     <!-- Community Section -->
     <section id="community" class="community">
         <h2>COMUNIDADE</h2>
-        <div class="testimonials">
+        <div class="testimonials" id="testimonials">
             <div class="testimonial-card">
                 <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Player">
                 <p>"Cyber Realm mudou minha visão sobre jogos indie. Gráficos incríveis!"</p>
@@ -83,6 +117,22 @@
                 <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Player">
                 <p>"A equipe tem uma visão única. Mal posso esperar pelo próximo lançamento!"</p>
                 <span>- João P.</span>
+            </div>
+            <!-- Botão para abrir popup -->
+            <button id="open-popup" class="suggestion-btn">Enviar sugestão</button>
+            <button id="clear-suggestions" class="suggestion-btn" style="background:#ff5252;color:#fff;margin-left:10px;">Limpar sugestões</button>
+        </div>
+
+        <!-- Popup de sugestão -->
+        <div id="suggestion-popup" class="popup-overlay">
+            <div class="popup-content">
+                <span class="close-popup" id="close-popup">&times;</span>
+                <div class="typing-bubble" id="typing-bubble">Digitando...</div>
+                <form id="suggestion-form">
+                    <textarea id="suggestion-text" placeholder="Digite sua sugestão..." required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+                <div id="suggestion-list"></div>
             </div>
         </div>
     </section>
@@ -108,6 +158,6 @@
         <p>© 2023 PixelForge Studios. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>

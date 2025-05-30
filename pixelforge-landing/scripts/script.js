@@ -90,4 +90,77 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 100);
     }
+    
+    // Popup de sugestão
+    const openBtn = document.getElementById('open-popup');
+    const closeBtn = document.getElementById('close-popup');
+    const popup = document.getElementById('suggestion-popup');
+    const typingBubble = document.getElementById('typing-bubble');
+    const suggestionForm = document.getElementById('suggestion-form');
+    const suggestionText = document.getElementById('suggestion-text');
+    const suggestionList = document.getElementById('suggestion-list');
+    const communitySuggestion = document.getElementById('community-suggestion');
+    const communitySuggestion1 = document.getElementById('community-suggestion-1');
+    const communitySuggestion2 = document.getElementById('community-suggestion-2');
+    const testimonials = document.getElementById('testimonials');
+    const clearBtn = document.getElementById('clear-suggestions');
+    
+    if (openBtn && closeBtn && popup) {
+        openBtn.onclick = () => {
+            popup.classList.add('active');
+            typingBubble.style.display = 'inline-block';
+            suggestionText.value = '';
+            suggestionText.focus();
+        };
+        closeBtn.onclick = () => popup.classList.remove('active');
+        popup.onclick = (e) => {
+            if (e.target === popup) popup.classList.remove('active');
+        };
+        suggestionText.oninput = () => {
+            typingBubble.textContent = suggestionText.value ? 'Digitando...' : 'Digitando...';
+            typingBubble.style.display = suggestionText.value ? 'inline-block' : 'inline-block';
+        };
+        suggestionForm.onsubmit = (e) => {
+            e.preventDefault();
+            const suggestion = suggestionText.value.trim();
+            if (suggestion) {
+                // Cria um card anônimo
+                const card = document.createElement('div');
+                card.className = 'testimonial-card';
+                card.innerHTML = `
+                    <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="Anônimo">
+                    <p>"${suggestion}"</p>
+                    <span>- Anônimo</span>
+                `;
+                // Adiciona o novo card antes do botão
+                testimonials.insertBefore(card, openBtn);
+
+                // (Opcional) Adiciona à lista de sugestões do popup
+                const div = document.createElement('div');
+                div.className = 'suggestion-item';
+                div.textContent = suggestion;
+                suggestionList.prepend(div);
+
+                suggestionText.value = '';
+                typingBubble.textContent = 'Digitando...';
+                popup.classList.remove('active');
+            }
+        };
+    }
+    
+    function limparSugestoes() {
+        // Remove todos os cards anônimos
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            const span = card.querySelector('span');
+            if (span && span.textContent.trim() === '- Anônimo') {
+                card.remove();
+            }
+        });
+        // Limpa a lista de sugestões do popup
+        suggestionList.innerHTML = '';
+    }
+
+    if (clearBtn) {
+        clearBtn.onclick = limparSugestoes;
+    }
 });
