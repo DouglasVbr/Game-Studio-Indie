@@ -1,6 +1,6 @@
 # PixelForge Studios - Landing Page
 
-![Banner do Projeto](https://via.placeholder.com/1200x300.png?text=PixelForge+Studios+-+Landing+Page)
+![Banner do Projeto](https://github.com/user-attachments/assets/c811a535-b565-4838-be13-4be2bb7d36e6)
 
 ## 💡 Sobre o Projeto
 
